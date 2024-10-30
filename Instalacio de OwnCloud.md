@@ -11,3 +11,4 @@ Aixo es el que te que surtir al executar el comandament
 Una vegada executat aquest comandament farem aquest altre 
 
 **sudo apt upgrade**
+![SudoaptUpgrade](SudoaptUpgrade.png)
