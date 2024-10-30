@@ -5,6 +5,8 @@ Abans de fer aixo el que farem sera actualitzar la maquina.
 Amb l'us del comandament 
 
 **sudo apt update**
+Aixo es el que te que surtir al executar el comandament
+![SudoaptUpdate](Sudoaptupdate.png)
 
 Una vegada executat aquest comandament farem aquest altre 
 
