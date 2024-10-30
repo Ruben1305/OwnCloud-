@@ -11,3 +11,6 @@ Aixo es el que te que surtir al executar el comandament
 Una vegada executat aquest comandament farem aquest altre 
 
 **sudo apt upgrade**
+
+Una vegada executat aqust 2 comandaments ya tenim la maquina actualizada i es el moment de instalar **apache2 i mysql**
+
