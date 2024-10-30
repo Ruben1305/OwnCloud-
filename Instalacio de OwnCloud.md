@@ -6,7 +6,7 @@ Amb l'us del comandament
 
 **sudo apt update**
 Aixo es el que te que surtir al executar el comandament
-![SudoaptUpdate](Sudoaptupdate.png)
+![SudoaptUpdate](SudoaptUpdate.png)
 
 Una vegada executat aquest comandament farem aquest altre 
 
