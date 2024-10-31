@@ -64,7 +64,7 @@ sudo apt install -y php7.4-fpm php7.4-common php7.4-mbstring php7.4-xmlrpc php7.
 ```bash
 sudo update-alternatives --config php
 ```
-Ara es te que activar els mòduls d'apache2 necessaris:
+- Ara es te que activar els mòduls d'apache2 necessaris:
 ```bash
 sudo a2enmod proxy_fcgi setenvif
 ```
@@ -77,23 +77,52 @@ sudo service apache2 restart
 ```
 ## Configurem el MYSQL
 
-El primer pas per poder configurar el **MYSQL** es accedir a ell.
-
-**sudo mysql**
-
-Una vegada dins de **MYSQL** crearem la base de dades a la que li posarem el nom de bbdd.
-
-**CREATE DATABASE bbdd;**
-
-Amb la base de dades creada tenim que crear un usuario.
-
+- El primer pas per poder configurar el **MYSQL** es accedir a ell.
+```bash
+sudo mysql
+```
+- Una vegada dins de **MYSQL** crearem la base de dades a la que li posarem el nom de bbdd.
+```bash
+CREATE DATABASE bbdd;
+```
+- Amb la base de dades creada tenim que crear un usuario.
+```bash
 CREATE USER 'usuario'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
-
-Amb l'usuari creat li donem privilegis
-
+```
+- Amb l'usuari creat li donem privilegis
+```bash
 GRANT ALL ON bbdd.* to 'usuario'@'localhost';
+```
+- Ya hem fet tot al **MYSQL** a si que sortim
+```bash
+exit
+```
+- Una vegada ya fora del **MYSQL** el que farem sera probar la conexio a la base de dades
+```bash
+mysql -u usuario -p
+```
 
-Ya hem fet tot al **MYSQL** a si que sortim
+## Descarreguem els fitxers de l'aplicació web
+- Aquest es el arxiu que heu de descarregar
+https://download.owncloud.com/server/stable/owncloud-complete-20240724.zip
+- Anem al directori baixadas
+```bash
+cd Baixades
+```
+- Una vegada dins del directori descomprimim allà els fitxers de l'aplicació web, heu de substituir `app-web.zip` per el nom del vostre fitxer que heu descarregat
+```bash
+sudo cp ~/Baixades/app-web.zip /var/www/html
+```
+- Anem al directori `/var/www/html`
+```bash
+cd /var/www/html
+```
+- Copiem els fitxers a la carpeta `/var/www/html`, modifiqueu `app-web` pel nom del directori on s'ha descomprimit el vostre arxiu.
+```bash
+sudo cp -R app-web/. /var/www/html
+```
 
-**exit**
-
+- Descomprim el arxiu heu de substituir `app-web.zip per el nom del vostre fitxer
+```bash
+sudo unzip app-web.zip
+```
