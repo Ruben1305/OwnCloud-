@@ -167,6 +167,6 @@ sudo chown -R usuario:www-data .
   - **Usuari**: usuario
   - **Contrasenya**: password
   - **Base de dades**: bbdd
-  - 
+  - **Domini**: localhost
 
  
