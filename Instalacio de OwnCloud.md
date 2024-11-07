@@ -122,7 +122,28 @@ cd /var/www/html
 sudo cp -R app-web/. /var/www/html
 ```
 
-- Descomprim el arxiu heu de substituir `app-web.zip per el nom del vostre fitxer
+- Descomprim el arxiu heu de substituir `app-web.zip` per el nom del vostre fitxer
 ```bash
 sudo unzip app-web.zip
+```
+- Una vegada hem descomprimit el `.zip` utilitzem aquest comandament per eliminar-lo. Recordem que el nom de `app-web`hi ha que cambiar-lo perl nom del teu arxiu.
+```bash
+sudo rm app-web.zip
+```
+- Una vegada eliminat el `.zip` tambe eliminem el `index.html`.
+```bash
+sudo rm -rf /var/www/html/index.html
+```
+## Aplicació de poders a les nostres aplicacions webs
+- Una vegada hem descomprimit tots els arxius al directori `/var/www/html` li apliquem permisos a aquest directori.
+- Si no estem dins del directori ya.
+```bash
+cd /var/www/html
+```
+- Una vegada dins del directori executarem aquests comandaments.
+```bash
+sudo chmod -R 775 .
+```
+```bash
+sudo chown -R usuario:www-data .
 ```
