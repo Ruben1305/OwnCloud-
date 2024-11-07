@@ -1,0 +1,2 @@
+# Configuració del OwnCloud
+
