@@ -163,6 +163,8 @@ sudo chown -R usuario:www-data .
 
   ![LocalHost](4Owncloud.png)
 
+
+**Les dades que hi ha que possar son aquestes**
   - **Usuari**: usuario
   - **Contrasenya**: password
   - **Base de dades**: bbdd
