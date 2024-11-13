@@ -1,4 +1,4 @@
-# Configuració del OwnCloud
+# Configuracion del OwnCloud
 Una vez hemos instalado la nube de `OwnCloud` vamos a comprobar que todo funcione bien. Empezaremos con la creacion de usuarios.
 
 ## Creacion de usuarios
@@ -37,7 +37,26 @@ Una vez hemos instalado la nube de `OwnCloud` vamos a comprobar que todo funcion
     
    ![OwnCloud](Config/7ConfigOwn.jpg)
 
-**Una vez cambiada la contraseña nos salimos de la cuenta del administrador.**
+**3. Una vez cambiada la contraseña nos salimos de la cuenta del administrador.**
 
   ![OwnCloud](Config/8ConfigOwn.jpg)
+
+## Comprobar el uso de documentos compartidos
+
+**1. En mi caso me meto con el usuario de Didac**
+
+![OwnCloud](Config/9ConfigOwn.jpg)
+
+**2. Una vez dentro podemos ver que si que le sale la carpeta y tenemos acceso a ella.**
+
+![OwnCloud](Config/10ConfigOwn.jpg)
+
+**3. Comprobamos que podamos subir para ello le damos al simbolo de mas y le damos a subidas**
+
+![OwnCloud](Config/11ConfigOwn.jpg)
+
+**4. Y para comprobar que si podemos subir archivos o fotos, subimos lo que queramos en mi caso mas fotos.**
+
+![OwnCloud](Config/12ConfigOwn.jpg)
+
 
