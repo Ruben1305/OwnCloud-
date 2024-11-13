@@ -59,4 +59,25 @@ Una vez hemos instalado la nube de `OwnCloud` vamos a comprobar que todo funcion
 
 ![OwnCloud](Config/12ConfigOwn.jpg)
 
+## Habilitamos el acceso a nuestra nube a una maquina remota.
 
+**1. El primer paso sera en mi caso de una maquina virtual le tengo que cambiar la red**
+
+![OwnCloud](14ConfigOwn.jpg)
+
+**2. Una vez hemos cambiado la red accederemos a la terminal y ejecutaremos los siguentes comandos.**
+```console
+cd /var/www/html/owncloud/config/
+```
+```console
+sudo nano config.php
+```
+**2.1 Una vez puesto el comando anterior te pedira la contraseña de tu usuario la pones**
+
+![OwnCloud](15ConfigOwn.png)
+
+**3. Una vez puesto los comandos anteriores y la contraseña te tiene que salir algo asi**
+
+![OwnCloud](16ConfigOwn.jpg)
+
+**Donde esta puesta la linia amarilla hay que poner TU ip (la de tu maquina/WIFI)**
