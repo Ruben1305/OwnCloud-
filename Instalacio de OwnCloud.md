@@ -146,28 +146,5 @@ sudo chmod -R 775 .
 ```console
 sudo chown -R usuario:www-data .
 ```
-## Registrarse a l'OwnCloud
-1. Una vegada hem fet tot anem al navegador en el meu cas Firefox i buscar `localhost` sortira una cosa aixì
-
-![LocalHost](1Owncloud.png)
-
-2. Li donem a l'opcio que surt resalta en blau i ens sortira una pagina com aquesta.
-
- ![OwnCloud](2Owncloud.png)
-
-3. A les dos primeres opcions posem un nom d'usuari i una contrasenya que ens enrecordem.
-
-  ![LocalHost](3Owncloud.png)
-
-4. Mes abaix en aquestes opcions possarem el seguent.
-
-  ![LocalHost](4Owncloud.png)
-
-
-**Les dades que hi ha que possar son aquestes**
-  - **Usuari**: usuario
-  - **Contrasenya**: password
-  - **Base de dades**: bbdd
-  - **Domini**: localhost
 
  
