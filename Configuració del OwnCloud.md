@@ -78,6 +78,22 @@ sudo nano config.php
 
 **3. Una vez puesto los comandos anteriores y la contraseña te tiene que salir algo asi**
 
-![OwnCloud](16ConfigOwn.jpg)
+![OwnCloud](16CofigOwn.png)
 
-**Donde esta puesta la linia amarilla hay que poner TU ip (la de tu maquina/WIFI)**
+**3.1 Donde esta puesta la linia amarilla hay que poner TU ip (la de tu maquina/WIFI) solo hay que cambiar lo que esta entre `''`**
+
+**3.2 Una vez echo todo esto salimos dandole `control+X` luego ponemos `S` y le damos al `enter`.**
+
+**4. Ya hemos dado seguridad a nuestra IP entonces ahora toca reiniciar el `Sistema de apache2`.**
+```console
+sudo systemctl restart apache2
+```
+**4.1 Nos pedira la contraseña del usuario la ponemos y ya esta.**
+
+![OwnCloud](17ConfigOwn.png)
+
+### Comprobamos que si podamos acceder desde otra IP a nuestra nube de OwnCloud
+
+**Accedmos a cualquier navegador y ponemos la IP que hemos puesto en el terminal**
+
+**Una vez hemos echo todo esto ya tendriamos el acceso a nuestra nube de owncloud**
