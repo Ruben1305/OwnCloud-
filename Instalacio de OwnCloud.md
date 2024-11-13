@@ -1,18 +1,17 @@
 # OwnCloud
-Instal·larem el núvol OwnCloud des de la terminal en un programari Linux.
-## Primer paso Instal·lació d'apache2, mysql i algunes llibreries al contenidor
-Abans de fer aixo el que farem sera actualitzar la maquina.
-Amb l'us del comandament 
+Instalaremos la nube de OwnCloud con la terminal en un sistema Linux.
+## Primer paso Instalacion del apache2, mysql y  otras librerias al directorio.
+Antes de hacer eso lo que hacemos es actualizar la maquina.
+Con este comando la actualizamos.
 ```console
 sudo apt update
 ```
-1. Una vegada executat aquest comandament farem aquest altre 
+1. Una vez ejecutado este comando utilizaremos este otro. 
 
 ```console
 sudo apt upgrade
 ```
-2. Una vegada executat aqust 2 comandaments ya tenim la maquina actualizada i es el moment de instalar **apache2 i mysql** utilitzarem aquests comandaments:
-   
+2. Una vez ejecutados los dos comandos siguientes ya tenemos la maquina actulizada y vamos a instalar **apache2 i mysql** con estos comandos.   
 ```console
 sudo apt install -y apache2**
 ```
@@ -20,36 +19,36 @@ sudo apt install -y apache2**
 sudo apt install -y mysql-server
 ```
 
-4. Ara ja tenim les aplicacions instalades, ara instalarem libreries de les diferents aplicaions: 
+4. Ahora ja tenemos las aplicaciones instaladas, asi que vamos a por las librerias. 
 ```console
 sudo apt install -y php libapache2-mod-php
 ```
 ```console
 sudo apt install -y php-fpm php-common php-mbstring php-xmlrpc php-soap php-gd php-xml php-intl php-mysql php-cli php-ldap php-zip php-curl
 ```
-5. Una vegada instala les aplicaions i les librerires reinitciarem el servidor d'apache2
+5. Una vez instalada las aplicaiones y librerias reiniciamos el servidor de apache2.
 
 ```console
 sudo systemctl restart apache2
 ```
-## Instal·lar la versió 7.4 de PHP a Ubuntu 24.04
+## Instalarr la version 7.4 de PHP a Ubuntu 24.04
 
-1. Per a poder instal·lar ownCloud necessitarem la versió 7.4 de PHP, per a instal·lar-la al nostre sistema haurem de fer les següents comandes:
-2. Instal·leu els requisits previs de PPA:
+1. Para poder instalar OwnCloud neccesitamos la version 7.4 de PHP, para instalar en nuestro sistema tendremos que ejecutar los comandos siguientes.
+2. Instalamos los requesitos previos de PPA:
 
 ```console
 sudo apt install software-properties-common -y
 ```
-3. Instal·la les eines necessàries per treballar amb els arxius de paquets personals (PPA).
+3. Instalamos las herramientas neccesarias para trabajar con los archivos de paquetes personales (PPA).
 
 ```console
 LC_ALL=C.UTF-8 sudo add-apt-repository ppa:ondrej/php -y
 ```
-4. Actualitza ara els repositoris:
+4. Actulizamos los repositorios.
 ```console
 sudo apt update
 ```
-5. Una vegada actulitzats els repositoris instalem les llibreries de PHP de la versió 7.4
+5. Una vez actualizado el repositorio instalamos las librerias de PHP 7.4.
 ```console
 sudo apt install php7.4 -y
 ```
@@ -59,87 +58,95 @@ sudo apt install -y php libapache2-mod-php7.4
 ```console
 sudo apt install -y php7.4-fpm php7.4-common php7.4-mbstring php7.4-xmlrpc php7.4-soap php7.4-gd php7.4-xml php7.4-intl php7.4-mysql php7.4-cli php7.4-ldap php7.4-zip php7.4-curl
 ```
-6. Una vegada instalades les llibreries seleccioneu la versió de PHP que voleu:
+6. Una vez hemos instalado las librerias elegimos la version que queramos de PHP
 ```console
 sudo update-alternatives --config php
 ```
-7. Ara es te que activar els mòduls d'apache2 necessaris:
+7. Ahora es el momento de activar los modulos de apache2.
 ```console
 sudo a2enmod proxy_fcgi setenvif
 ```
 ```console
 sudo a2enconf php7.4-fpm
 ```
-8. I pre ultim tornem a actualitzar apache2
+8. Por ultimo actualizaremos apache2
 ```console
 sudo service apache2 restart
 ```
 ## Configurem el MYSQL
 
-1. El primer pas per poder configurar el **MYSQL** es accedir a ell.
+1. Lo primero es acceder al **MYSQL**.
 ```console
 sudo mysql
 ```
-2. Una vegada dins de **MYSQL** crearem la base de dades a la que li posarem el nom de bbdd.
+2. Una vez dentro de **MYSQL** creamos la base de datos a la que le pondremos de nombre bbdd.
 ```console
 CREATE DATABASE bbdd;
 ```
-3. Amb la base de dades creada tenim que crear un usuario.
+3. Con la base de datos creada, creamos el usuario.
 ```console
 CREATE USER 'usuario'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
 ```
-4. Amb l'usuari creat li donem privilegis
+4. Ahora le damos permisos
 ```console
 GRANT ALL ON bbdd.* to 'usuario'@'localhost';
 ```
-5. Ya hem fet tot al **MYSQL** a si que sortim
+5. Ya hemos echo todo dentro del **MYSQL** a si que salimos.
 ```console
 exit
 ```
-6. Una vegada ya fora del **MYSQL** el que farem sera probar la conexio a la base de dades
+6. Una vez ja fuera del **MYSQL** lo que haremos sera probar la conexion con la base de datos.
 ```console
 mysql -u usuario -p
 ```
 
 ## Descarreguem els fitxers de l'aplicació web
-1. Aquest es el arxiu que heu de descarregar
+1. Este es el archivo que os teneis que descargar.
 https://download.owncloud.com/server/stable/owncloud-complete-20240724.zip
-2. Anem al directori baixadas
+2. Vamos al directorio de descargas.
 ```console
 cd Baixades
 ```
-3. Una vegada dins del directori descomprimim allà els fitxers de l'aplicació web, heu de substituir `app-web.zip` per el nom del vostre fitxer que heu descarregat
+3. Una vez dentro del directorio descomprimimos aqui los archivos, teneis que cambiar `app-web.zip` por el nombre de vuestro archivo.
+   
 ```console
 sudo cp ~/Baixades/app-web.zip /var/www/html
 ```
-4. Anem al directori `/var/www/html`
+4. Vamos al directorio `/var/www/html`
+
 ```console
 cd /var/www/html
 ```
-5. Copiem els fitxers a la carpeta `/var/www/html`, modifiqueu `app-web` pel nom del directori on s'ha descomprimit el vostre arxiu.
+5. Copiamos los archivos en la carpeta `/var/www/html`, cambia `app-web` por el nombre del directorio donde se ha descomprimido su archivo.
+
 ```console
 sudo cp -R app-web/. /var/www/html
 ```
 
-6. Descomprim el arxiu heu de substituir `app-web.zip` per el nom del vostre fitxer
+6. Descomprimimos el archivo hay que recordar que hay que sustituir `app-web.zip` por el nombre de su archivo.
+
 ```console
 sudo unzip app-web.zip
 ```
-7. Una vegada hem descomprimit el `.zip` utilitzem aquest comandament per eliminar-lo. Recordem que el nom de `app-web`hi ha que cambiar-lo perl nom del teu arxiu.
+7. Una vez hemos descomprimido el `.zip` utilizamos este comando para eliminarlo. Recordemos que el nombre de `app-web` se debe cambiar por el nombre de su archivo.
+
 ```console
 sudo rm app-web.zip
 ```
-8. Una vegada eliminat el `.zip` tambe eliminem el `index.html`.
+8. Una vez eliminado el `.zip` también eliminamos el `index.html`.
+   
 ```console
 sudo rm -rf /var/www/html/index.html
 ```
-## Aplicació de poders a les nostres aplicacions webs
-1. Una vegada hem descomprimit tots els arxius al directori `/var/www/html` li apliquem permisos a aquest directori.
-2. Si no estem dins del directori ya.
+## Aplicación de poderes en nuestras aplicaciones webs
+
+1. Una vez hemos descomprimido todos los archivos en el directorio `/var/www/html` le daremos los permisos a este directorio.
+   
+2. Si no estamos dentro del directorio ya ejecutaremos este comando.
 ```console
 cd /var/www/html
 ```
-3. Una vegada dins del directori executarem aquests comandaments.
+3. Una vez dentro del directorio ejecutaremos los comandos siguientes.
 ```console
 sudo chmod -R 775 .
 ```
@@ -147,28 +154,31 @@ sudo chmod -R 775 .
 sudo chown -R usuario:www-data .
 ```
 ## Registrarse a l'OwnCloud
-1. Una vegada hem fet tot anem al navegador en el meu cas Firefox i buscar `localhost` sortira una cosa aixì
+
+1. Una vez hemos hecho todo vamos al navegador en mi caso Firefox y buscar `localhost` nos saldrá algo así.
 
 ![LocalHost](Config/1Owncloud.png)
 
-2. Li donem a l'opcio que surt resalta en blau i ens sortira una pagina com aquesta.
+2. Le damos a la opcion que sale resalta en azul y nos saldrá una pagina como esta.
 
  ![OwnCloud](Config/2Owncloud.png)
 
-3. A les dos primeres opcions posem un nom d'usuari i una contrasenya que ens enrecordem.
-
+3. En las dos primeras opciones ponemos un nombre de usuario y una contraseña de los que nos acordaremos.
+   
   ![LocalHost](Config/3Owncloud.png)
 
-4. Mes abaix en aquestes opcions possarem el seguent.
+4. Más abajo en estas opciones pondremos lo siguiente.
 
   ![LocalHost](Config/4Owncloud.png)
 
 
-**Les dades que hi ha que possar son aquestes**
-  - **Usuari**: usuario
-  - **Contrasenya**: password
-  - **Base de dades**: bbdd
-  - **Domini**: localhost
+
+**Los datos que hay que poner son éstos**
+
+**Usuario:** usuario
+**Contraseña:** password
+**Base de datos:** bbdd
+**Dominio:** localhost
 
 **En este enlace podras ver el manual de configuracion de OwnCloud [Configuracion](https://github.com/Ruben1305/OwnCloud-/blob/main/Configuraci%C3%B3%20del%20OwnCloud.md)**
 
