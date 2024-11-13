@@ -170,4 +170,6 @@ sudo chown -R usuario:www-data .
   - **Base de dades**: bbdd
   - **Domini**: localhost
 
+**En este enlace podras ver el manual de configuracion de OwnCloud [Configuracion](https://github.com/Ruben1305/OwnCloud-/blob/main/Configuraci%C3%B3%20del%20OwnCloud.md)**
+
  
