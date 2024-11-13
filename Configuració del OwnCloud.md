@@ -20,3 +20,4 @@ Una vez hemos instalado la nube de `OwnCloud` vamos a comprobar que todo funcion
 **5. Creamos otro grupo y se lo aplicamos al usuario que hemos creado.**
 
  ![OwnCloud](Config/4ConfigOwn.jpg)
+
