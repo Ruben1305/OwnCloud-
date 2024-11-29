@@ -19,7 +19,7 @@ sudo apt install -y apache2
 sudo apt install -y mysql-server
 ```
 
-4. Ahora ja tenemos las aplicaciones instaladas, asi que vamos a por las librerias. 
+4. Ahora ya tenemos las aplicaciones instaladas, asi que vamos a por las librerias. 
 ```console
 sudo apt install -y php libapache2-mod-php
 ```
@@ -31,7 +31,7 @@ sudo apt install -y php-fpm php-common php-mbstring php-xmlrpc php-soap php-gd p
 ```console
 sudo systemctl restart apache2
 ```
-## Instalarr la version 7.4 de PHP a Ubuntu 24.04
+## Instalar la version 7.4 de PHP a Ubuntu 24.04
 
 1. Para poder instalar OwnCloud neccesitamos la version 7.4 de PHP, para instalar en nuestro sistema tendremos que ejecutar los comandos siguientes.
 2. Instalamos los requesitos previos de PPA:
