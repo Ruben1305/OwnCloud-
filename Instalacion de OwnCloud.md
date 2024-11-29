@@ -13,7 +13,7 @@ sudo apt upgrade
 ```
 2. Una vez ejecutados los dos comandos siguientes ya tenemos la maquina actulizada y vamos a instalar **apache2 i mysql** con estos comandos.   
 ```console
-sudo apt install -y apache2**
+sudo apt install -y apache2
 ```
 ```console
 sudo apt install -y mysql-server
